@@ -1,15 +1,14 @@
 const textareaE1 = document.getElementById("textarea");
-const totalcharacterE1 = document.getElementById("total");
-const remainingCharacterE1 = document.getElementById("remaining");
+const totalCharacter = document.getElementById("total");
+const remaining = document.getElementById("remaining");
+
+updateCount();
 
 textareaE1.addEventListener("keyup", () => {
-  updateCounter();
+  updateCount();
 });
-
-updateCounter();
-
-function updateCounter() {
-  totalcharacterE1.innerText = textareaE1.value.length;
-  remainingCharacterE1.innerText =
+function updateCount() {
+  totalCharacter.innerText = textareaE1.value.length;
+  remaining.innerText =
     textareaE1.getAttribute("maxlength") - textareaE1.value.length;
 }
